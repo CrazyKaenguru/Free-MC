@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Servers</title>
+    <style>
+        /* Add your CSS styles here */
+        /* Example: */
+        .server-container {
+            margin-top: 20px;
+        }
+        .server {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .server h3 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Servers Owned by {{ username }}</h1>
+    {% if servers %}
+        <div class="server-container">
+            {% for server in servers %}
+                <div class="server">
+                    <h3>{{ server.server_id }}</h3>
+                    <!-- Add more details about the server as needed -->
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No servers found.</p>
+    {% endif %}
+</body>
+</html>

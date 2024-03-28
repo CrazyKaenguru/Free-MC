@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Minecraft Server</title>
+</head>
+<body>
+    <h2>Create Minecraft Server</h2>
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    <form method="POST">
+        <label for="server_id">Server ID:</label><br>
+        <input type="text" id="server_id" name="server_id"><br><br>
+        <input type="submit" value="Create Server">
+    </form>
+    <p><a href="/">Back to Home</a></p>
+</body>
+</html>
