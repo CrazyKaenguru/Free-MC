@@ -1,0 +1,33 @@
+[11:03:36] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[11:03:42] [ServerMain/INFO]: Loaded 1174 recipes
+[11:03:43] [ServerMain/INFO]: Loaded 1271 advancements
+[11:03:43] [Server thread/INFO]: Starting minecraft server version 1.20.4
+[11:03:43] [Server thread/INFO]: Loading properties
+[11:03:44] [Server thread/INFO]: This server is running Paper version git-Paper-398 (MC: 1.20.4) (Implementing API version 1.20.4-R0.1-SNAPSHOT) (Git: b700460)
+[11:03:45] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[11:03:45] [Server thread/INFO]: Using 4 threads for Netty based IO
+[11:03:45] [Server thread/WARN]: [!] The timings profiler has been enabled but has been scheduled for removal from Paper in the future.
+    We recommend installing the spark profiler as a replacement: https://spark.lucko.me/
+    For more information please visit: https://github.com/PaperMC/Paper/issues/8948
+[11:03:46] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 2 worker threads, and gen parallelism of 2 threads
+[11:03:46] [Server thread/INFO]: Default game type: SURVIVAL
+[11:03:46] [Server thread/INFO]: Generating keypair
+[11:03:47] [Server thread/INFO]: Starting Minecraft server on 192.168.178.24:25565
+[11:03:47] [Server thread/INFO]: Using default channel type
+[11:03:47] [Server thread/INFO]: Paper: Using Java compression from Velocity.
+[11:03:47] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
+[11:03:47] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[11:03:47] [Server thread/INFO]: Preparing level "world"
+[11:03:48] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[11:03:49] [Server thread/INFO]: Time elapsed: 532 ms
+[11:03:49] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
+[11:03:49] [Server thread/INFO]: Time elapsed: 95 ms
+[11:03:49] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
+[11:03:49] [Server thread/INFO]: Time elapsed: 73 ms
+[11:03:49] [Server thread/INFO]: Running delayed init tasks
+[11:03:49] [Server thread/INFO]: Done (5.741s)! For help, type "help"
+[11:03:49] [Server thread/INFO]: Timings Reset
+[11:03:57] [User Authenticator #0/INFO]: UUID of player Kaenguru3D is 2b1d5648-cbce-4624-8a38-0d3ace9e580f
+[11:03:58] [Server thread/INFO]: Kaenguru3D joined the game
+[11:03:58] [Server thread/INFO]: Kaenguru3D[/192.168.178.27:58314] logged in with entity id 209 at ([world]302.6423676898178, 68.58749572734006, 237.20720510742927)
+[11:03:58] [Server thread/WARN]: Can't keep up! Is the server overloaded? Running 2669ms or 53 ticks behind
