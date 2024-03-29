@@ -21,6 +21,7 @@ class MinecraftServer(Base):
     server_id = Column(String, unique=True)
     owner_id = Column(Integer, ForeignKey('users.id'))
     owner = relationship("User", back_populates="servers")
+    process_id = Column(Integer)
 
 # Replace 'sqlite:///minecraft_database.db' with your desired database URI
 engine = create_engine('sqlite:///minecraft_database.db', echo=True)

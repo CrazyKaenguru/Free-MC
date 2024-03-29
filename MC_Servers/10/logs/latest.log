@@ -1,0 +1,62 @@
+[22:19:41] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[22:19:55] [ServerMain/INFO]: Loaded 1174 recipes
+[22:19:56] [ServerMain/INFO]: Loaded 1271 advancements
+[22:19:57] [Server thread/INFO]: Starting minecraft server version 1.20.4
+[22:19:57] [Server thread/INFO]: Loading properties
+[22:19:57] [Server thread/INFO]: This server is running Paper version git-Paper-398 (MC: 1.20.4) (Implementing API version 1.20.4-R0.1-SNAPSHOT) (Git: b700460)
+[22:19:59] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[22:19:59] [Server thread/INFO]: Using 4 threads for Netty based IO
+[22:20:00] [Server thread/WARN]: [!] The timings profiler has been enabled but has been scheduled for removal from Paper in the future.
+    We recommend installing the spark profiler as a replacement: https://spark.lucko.me/
+    For more information please visit: https://github.com/PaperMC/Paper/issues/8948
+[22:20:00] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 2 worker threads, and gen parallelism of 2 threads
+[22:20:02] [Server thread/INFO]: Default game type: SURVIVAL
+[22:20:02] [Server thread/INFO]: Generating keypair
+[22:20:02] [Server thread/INFO]: Starting Minecraft server on *:25565
+[22:20:02] [Server thread/INFO]: Using default channel type
+[22:20:02] [Server thread/INFO]: Paper: Using Java compression from Velocity.
+[22:20:02] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
+[22:20:02] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[22:20:02] [Server thread/INFO]: Preparing level "world"
+[22:20:03] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[22:20:04] [Server thread/INFO]: Time elapsed: 620 ms
+[22:20:04] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
+[22:20:04] [Server thread/INFO]: Time elapsed: 94 ms
+[22:20:04] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
+[22:20:04] [Server thread/INFO]: Time elapsed: 130 ms
+[22:20:04] [Server thread/INFO]: Running delayed init tasks
+[22:20:04] [Server thread/INFO]: Done (6.903s)! For help, type "help"
+[22:20:04] [Server thread/INFO]: Timings Reset
+[22:20:18] [User Authenticator #0/INFO]: UUID of player Kaenguru3D is 2b1d5648-cbce-4624-8a38-0d3ace9e580f
+[22:20:19] [Server thread/INFO]: Kaenguru3D joined the game
+[22:20:19] [Server thread/INFO]: Kaenguru3D[/192.168.178.24:52168] logged in with entity id 259 at ([world]374.5827263385668, 76.44781362385403, 207.8707812801853)
+[22:20:22] [Server thread/INFO]: Kaenguru3D lost connection: Disconnected
+[22:20:22] [Server thread/INFO]: Kaenguru3D left the game
+[22:21:08] [User Authenticator #0/INFO]: UUID of player Kaenguru3D is 2b1d5648-cbce-4624-8a38-0d3ace9e580f
+[22:21:08] [Server thread/INFO]: com.mojang.authlib.GameProfile@7b442163[id=2b1d5648-cbce-4624-8a38-0d3ace9e580f,name=Kaenguru3D,properties={textures=[Property[name=textures, value=ewogICJ0aW1lc3RhbXAiIDogMTcxMTc0NzI2ODMwNSwKICAicHJvZmlsZUlkIiA6ICIyYjFkNTY0OGNiY2U0NjI0OGEzODBkM2FjZTllNTgwZiIsCiAgInByb2ZpbGVOYW1lIiA6ICJLYWVuZ3VydTNEIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzI3YzcwYWMyNjZiZWJhNGU1N2M5ZmNkMmY0ZDQxMWU0NzcyNzZhNTA0YmY5M2MxYjlmMTdhODM2ZmI5M2M4MDkiCiAgICB9CiAgfQp9, signature=HGS0+QtGyjulA8syMuaKg52F3xyyR4G6q9+ElTS63k3+WBsqEtNiA6ouyyAwPwFlRQcJWBRZc87n/1KAoZQr3On8Bkzj2X5R4NiSi7OnA9zGBsAguOTgIYV/bwJyfV/kJIR1SK6zL1jN2bnTnBKOq+nzROJba4axkQttEkxpsTl+L7+HNOKbl2ydv9LwSf3N42MmVrHCtvbWPkb3pgaEDp61tqOr97w4pohVuuj/QctSr/Mbl29B5A4hrQS89jR5UHppuPHt4KehOf8Jggcj6sbpj79OOp0810dLyz/2QF6T2vqpV22OSuvRtF12l7GrsjKXI/FW0sLl7J1GZpFgU7urjdntijNQD4eyZX18GLn/rDl5MktlSSsdQ2TIZgReeHulxkT3E5pbCw9qx6HitxrtmlU6FIcbeK5s4cNWeFe80JapaemIdyUuo3zW5s2jLnTLt76QeWseBPezUSo9/B6+qqr+0s8nsMTlopssUAjgdjcYo5RFEG1lnnNG7XhcoeYMfaQib0F0xuTft09J0r8mQhAp+Q78aMoqAEdbA5PBSUIltBHD6I39qLd6QSKQYdiV1rT2EGO73x172bPFeMXdeElnSbiciDxyqefOm0UIlAshJ/UmBnqGFM+92u2+MGP6ryR9oV+7xeQJy16ZYEP55zEsnCKikFhUK0a/CkE=]]}] lost connection: Disconnected
+[22:21:22] [Server thread/INFO]: Stopping the server
+[22:21:22] [Server thread/INFO]: Stopping server
+[22:21:22] [Server thread/INFO]: Saving players
+[22:21:22] [Server thread/INFO]: Saving worlds
+[22:21:22] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[22:21:22] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world'
+[22:21:22] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world'
+[22:21:22] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world'
+[22:21:25] [Server thread/INFO]: [ChunkHolderManager] Saved 642 block chunks, 642 entity chunks, 0 poi chunks in world 'world' in 2,92s
+[22:21:25] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[22:21:25] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_nether]'/minecraft:the_nether
+[22:21:25] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_nether'
+[22:21:25] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_nether'
+[22:21:25] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_nether'
+[22:21:26] [Server thread/INFO]: [ChunkHolderManager] Saved 529 block chunks, 529 entity chunks, 0 poi chunks in world 'world_nether' in 1,27s
+[22:21:26] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[22:21:26] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_the_end]'/minecraft:the_end
+[22:21:26] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_the_end'
+[22:21:26] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_the_end'
+[22:21:26] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_the_end'
+[22:21:26] [Server thread/INFO]: [ChunkHolderManager] Saved 529 block chunks, 529 entity chunks, 0 poi chunks in world 'world_the_end' in 0,25s
+[22:21:26] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[22:21:26] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
+[22:21:26] [Server thread/INFO]: Flushing Chunk IO
+[22:21:26] [Server thread/INFO]: Closing Thread Pool
+[22:21:26] [Server thread/INFO]: Closing Server

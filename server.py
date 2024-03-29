@@ -1,5 +1,3 @@
-import os
-from shutil import copytree
 from flask import Flask, render_template, request, redirect, session
 from sqlalchemy import create_engine, Column, String, Integer, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
@@ -7,23 +5,20 @@ from sqlalchemy.orm import sessionmaker, relationship
 from passlib.hash import sha256_crypt
 from sqlalchemy import DateTime
 from datetime import datetime
-import traceback
-from sqlalchemy.exc import SQLAlchemyError
 from flask_socketio import SocketIO
 import subprocess
 from threading import Thread
 import os
-
-# Get the current directory
-current_directory = os.getcwd()
+from shutil import copytree
+import psutil
 app = Flask(__name__)
 socketio = SocketIO(app)
-
-app = Flask(__name__)
+import json
 app.secret_key = "your_secret_key"
 
 Base = declarative_base()
-
+minecraft_process = None
+minecraft_processes = []
 class User(Base):
     __tablename__ = 'users'
     id = Column(Integer, primary_key=True)
@@ -39,73 +34,111 @@ class MinecraftServer(Base):
     server_id = Column(String, unique=True)
     owner_id = Column(Integer, ForeignKey('users.id'))
     owner = relationship("User", back_populates="servers")
+    process_id = Column(String)  # Add process_id columnw
 
-# Replace 'sqlite:///users_database.db' and 'sqlite:///minecraft_database.db' with your desired database URIs
-user_engine = create_engine('sqlite:///users_database.db', echo=True)
-minecraft_engine = create_engine('sqlite:///minecraft_database.db', echo=True)
+user_engine = create_engine('sqlite:///users_database.db', pool_pre_ping=True)
+minecraft_engine = create_engine('sqlite:///minecraft_database.db', pool_pre_ping=True)
 
-# Create the users database
+
 Base.metadata.create_all(user_engine)
-
-# Create the Minecraft servers database
 Base.metadata.create_all(minecraft_engine)
 
-# Create the user database session
 UserSession = sessionmaker(bind=user_engine)
 user_db_session = UserSession()
 
-# Create the Minecraft server database session
 MinecraftServerSession = sessionmaker(bind=minecraft_engine)
 minecraft_db_session = MinecraftServerSession()
 
 @app.route('/')
 def home():
     if 'username' in session:
-        # Get the user from the database
         user = user_db_session.query(User).filter_by(username=session['username']).first()
         if user:
-            # Get all servers owned by the user
             servers = user.servers
-            return render_template('servers.html', servers=servers,username=user.username)
+            return render_template('servers.html', servers=servers, username=user.username)
         else:
             return 'User not found'
     else:
-        return redirect(url_for('login'))
+        return render_template('login.html')
 
 @app.route('/server', methods=['GET', 'POST'])
 def server():
-    if request.method =='GET':
+    if request.method == 'GET':
         server_id_value = request.args.get('server_id')
-       
         user = user_db_session.query(User).filter_by(username=session['username']).first()
-      
         if(user_db_session.query(MinecraftServer).filter_by(server_id=server_id_value, owner=user).first()):
-            return render_template('server.html',username=session['username'],server_id=server_id_value)
-    return render_template('login.html')    
+            return render_template('server.html', username=session['username'], server_id=server_id_value)
+    return render_template('login.html')
 
-@app.route('/start-server', methods=['POST'])
+@app.route('/start-server', methods=['GET'])
 def start_server():
-    Thread(target=start_minecraft_server).start()
-    return 'Minecraft server starting...'
+    server_id = request.args.get('id')
+    ram_amount = 2048  # Beispiel für RAM-Menge
+    Thread(target=start_minecraft_server, args=(server_id, ram_amount)).start()
+    return render_template('login.html')
+
+@app.route('/stopp-server', methods=['GET'])
+def stopp_server():
+    write_to_server_console(minecraft_process, "stop \n")
+    return render_template('login.html')
+
+def start_minecraft_server(server_id, ram_amount):
+    server_directory = r"C:\Users\Quirin\Documents\GitHub\Free-MC\MC_Servers\\" + server_id 
+    os.chdir(server_directory)
+    
+    log_file = open("server.log", "w")
+    
+    ram_argument = f"-Xmx{ram_amount}M -Xms{ram_amount}M"
+
+    minecraft_process = subprocess.Popen(["java", "-Xmx1024M", "-Xms1024M", "-jar", "paper.jar", "nogui"], 
+                                         cwd=server_directory, 
+                                         stdin=subprocess.PIPE, 
+                                         stdout=subprocess.PIPE, 
+                                         stderr=subprocess.PIPE, 
+                                         creationflags=subprocess.CREATE_NO_WINDOW)
+    
+    # Append the subprocess object to the list
+    minecraft_processes.append(minecraft_process)
+    
+    server = user_db_session.query(MinecraftServer).filter_by(server_id=server_id).first()
+    server.process_id = minecraft_process.pid  # Assuming pid gives the process ID
+    user_db_session.commit()
+
+    # Print output from stdout and stderr
+    for line in minecraft_process.stdout:
+        print(line.decode().strip())
+    for line in minecraft_process.stderr:
+        print(line.decode().strip())
+
+    log_file.close()
 
 
+def get_minecraft_process(server_id):
+    for process in minecraft_processes:
+        if process.poll() is None:  # Check if the process is still running
+            return process
+    return None
 
-def start_minecraft_server():
-  # Specify the path to the Minecraft server jar file relative to the current directory
-    minecraft_server_path = os.path.join(current_directory, 'MC_Servers',"3","Minecraft_Server_Test", 'paper.jar')
+@app.route('/test')
+def test():
+    server_id = request.args.get('id')
+    existing_process = get_minecraft_process(server_id)
+    if existing_process:
+        write_to_server_console(existing_process, "stop \n")
+    
+    return redirect("/")
 
-# Start the Minecraft server using the full path
-def run_batch_file(batch_file_path):
-    batch_dir = os.path.dirname(r'C:\Users\Quirin\Documents\GitHub\Free-MC\MC_Servers\3\Minecraft_Server_Test\run.bat')
-    os.chdir(batch_dir)
-    # Open the batch file and capture its output
-    with subprocess.Popen(batch_file_path, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, universal_newlines=True) as process:
-            # Read and print each line of output
-            for line in process.stdout:
-                print(line.strip())  # Print the line (remove trailing newline)
+# Function to write to the stdin of a subprocess
+def write_to_server_console(process, message):
+    print("Trying to write")
+    if process is not None:
+        print(process)
+        process.stdin.write(message.encode())
+        process.stdin.flush()
+    else:
+        print("Process not found")
         
-run_batch_file(r'C:\Users\Quirin\Documents\GitHub\Free-MC\MC_Servers\3\Minecraft_Server_Test\run.bat')
-print("++++++++++++++++++++mc_serverstarted")
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
@@ -154,10 +187,11 @@ def create_server():
             if minecraft_db_session.query(MinecraftServer).filter_by(server_id=server_id).first():
                 return render_template('create_server.html', error='Server ID already exists')
             
-            # Copy the example Minecraft server directory to create a new server
-            new_server_dir = './MC_Servers/'+server_id
+            # Corrected path for copying server directory
+            new_server_dir = './MC_Servers/' + server_id
             copytree('./MC_Servers/example', new_server_dir)
             
+            # Removed process_id=None from MinecraftServer instantiation
             server = MinecraftServer(server_id=server_id, owner=user)
             user_db_session.add(server)  # Add the server to the same session as the user
             user_db_session.commit()  # Commit changes
@@ -171,4 +205,4 @@ def create_server():
     return render_template('create_server.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
