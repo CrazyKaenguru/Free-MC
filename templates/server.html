@@ -1,84 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-pL3+Kl2+wjvDl/3HXtLPekqWp20JpW8b8cVgDvfl+Ypbi3Z7zOx+2Hiu6GkyOfzi" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Server Logs</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.js" integrity="sha512-MgkNs0gNdrnOM7k+0L+wgiRc5aLgl74sJQKbIWegVIMvVGPc1+gc1L2oK9Wf/D9pq58eqIJAxOonYPVE5UwUFA==" crossorigin="anonymous"></script>
 </head>
 <body>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4">
-        <div class="box">
-          <h3>Welcome {{ username }}</h3>
-          <p>{{ server_id }}</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="box">
-          <div class="container">
-            <button id="startServerButton" class="btn btn-primary">Start Minecraft Server</button>
-            <div id="console"></div> <!-- Display console output here -->
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="box">
-          <h3>Box 3</h3>
-          <p>This is the content of box 3.</p>
-        </div>
-      </div>
+    <div id="log-container">
+        <!-- Log messages will be appended here -->
     </div>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="box">
-          <h3>Box 4</h3>
-          <p>This is the content of box 4.</p>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="box">
-          <h3>Box 5</h3>
-          <p>This is the content of box 5.</p>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <!-- Bootstrap JS (optional, if you need JS features) -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-g0Kk7VPL3i0zLS+8iQ+oaG7JSBdyDuKJBYAxuHKG/zI0UnX0+Eby2dScbVgSk6W8" crossorigin="anonymous"></script>
-  
-  <!-- Socket.IO -->
-  <script src="https://cdn.socket.io/4.5.0/socket.io.min.js" integrity="sha384-7EyYLQZgWBi67fBtVxw60/OWl1kjsfrPFcaU0pp0nAh+i8FD068QogUvg85Ewy1k" crossorigin="anonymous"></script>
-  
-  <script>
-    var socket = io();
+    <script>
+        var socket = io();  // Connect to the Flask-SocketIO server
 
-    $(document).ready(function() {
-      $('#startServerButton').click(function(event) {
-        event.preventDefault();
-
-        $.ajax({
-          url: '/start-server',
-          method: 'GET',
-          success: function(response) {
-            console.log('Minecraft server started successfully');
-            alert('Minecraft server started successfully');
-          },
-          error: function(xhr, status, error) {
-            console.error('Error starting Minecraft server:', error);
-            alert('Error starting Minecraft server. Please check the server logs.');
-          }
+        // Function to handle incoming log messages
+        socket.on('log_message', function(message) {
+            // Append the log message to the log container
+            var logContainer = document.getElementById('log-container');
+            logContainer.innerHTML += '<p>' + message + '</p>';
         });
-      });
-
-      // Listen for server output from Flask-SocketIO and append it to the console div
-      socket.on('server_output', function(data) {
-        $('#console').append('<p>' + data.data + '</p>');
-      });
-    });
-  </script>
+    </script>
 </body>
 </html>

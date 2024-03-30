@@ -1,65 +1,42 @@
-[22:19:25] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
-[22:19:31] [ServerMain/INFO]: Loaded 1174 recipes
-[22:19:31] [ServerMain/INFO]: Loaded 1271 advancements
-[22:19:32] [Server thread/INFO]: Starting minecraft server version 1.20.4
-[22:19:32] [Server thread/INFO]: Loading properties
-[22:19:32] [Server thread/INFO]: This server is running Paper version git-Paper-398 (MC: 1.20.4) (Implementing API version 1.20.4-R0.1-SNAPSHOT) (Git: b700460)
-[22:19:33] [Server thread/INFO]: Using 4 threads for Netty based IO
-[22:19:34] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[22:19:34] [Server thread/WARN]: [!] The timings profiler has been enabled but has been scheduled for removal from Paper in the future.
+[19:30:52] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[19:30:59] [ServerMain/INFO]: Loaded 1174 recipes
+[19:31:00] [ServerMain/INFO]: Loaded 1271 advancements
+[19:31:00] [Server thread/INFO]: Starting minecraft server version 1.20.4
+[19:31:00] [Server thread/INFO]: Loading properties
+[19:31:01] [Server thread/INFO]: This server is running Paper version git-Paper-398 (MC: 1.20.4) (Implementing API version 1.20.4-R0.1-SNAPSHOT) (Git: b700460)
+[19:31:02] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[19:31:02] [Server thread/INFO]: Using 4 threads for Netty based IO
+[19:31:03] [Server thread/WARN]: [!] The timings profiler has been enabled but has been scheduled for removal from Paper in the future.
     We recommend installing the spark profiler as a replacement: https://spark.lucko.me/
     For more information please visit: https://github.com/PaperMC/Paper/issues/8948
-[22:19:34] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 2 worker threads, and gen parallelism of 2 threads
-[22:19:35] [Server thread/INFO]: Default game type: SURVIVAL
-[22:19:35] [Server thread/INFO]: Generating keypair
-[22:19:35] [Server thread/INFO]: Starting Minecraft server on *:25567
-[22:19:35] [Server thread/INFO]: Using default channel type
-[22:19:36] [Server thread/INFO]: Paper: Using Java compression from Velocity.
-[22:19:36] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
-[22:19:36] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[22:19:36] [Server thread/INFO]: Preparing level "world"
-[22:19:37] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
-[22:19:38] [Server thread/INFO]: Time elapsed: 839 ms
-[22:19:38] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
-[22:19:38] [Server thread/INFO]: Time elapsed: 79 ms
-[22:19:38] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
-[22:19:38] [Server thread/INFO]: Time elapsed: 64 ms
-[22:19:38] [Server thread/INFO]: Running delayed init tasks
-[22:19:38] [Server thread/INFO]: Done (6.284s)! For help, type "help"
-[22:19:38] [Server thread/INFO]: Timings Reset
-[22:19:53] [User Authenticator #0/INFO]: UUID of player Kaenguru3D is 2b1d5648-cbce-4624-8a38-0d3ace9e580f
-[22:19:54] [Server thread/INFO]: Kaenguru3D (/192.168.178.24:52150) lost connection: Disconnected
-[22:20:11] [User Authenticator #0/INFO]: UUID of player Kaenguru3D is 2b1d5648-cbce-4624-8a38-0d3ace9e580f
-[22:20:12] [Server thread/INFO]: com.mojang.authlib.GameProfile@e5c4c4f[id=2b1d5648-cbce-4624-8a38-0d3ace9e580f,name=Kaenguru3D,properties={textures=[Property[name=textures, value=ewogICJ0aW1lc3RhbXAiIDogMTcxMTc0NzIxMTc3MSwKICAicHJvZmlsZUlkIiA6ICIyYjFkNTY0OGNiY2U0NjI0OGEzODBkM2FjZTllNTgwZiIsCiAgInByb2ZpbGVOYW1lIiA6ICJLYWVuZ3VydTNEIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzI3YzcwYWMyNjZiZWJhNGU1N2M5ZmNkMmY0ZDQxMWU0NzcyNzZhNTA0YmY5M2MxYjlmMTdhODM2ZmI5M2M4MDkiCiAgICB9CiAgfQp9, signature=ig+EOOIMjo/x1SVovEYPA2DkKJDxL6KVlFXPNRUe6DqGxwHJRw3rHOvmL9312fIHAPlzQGnUbBqNG6QllUk/K6NHtOCVZv2KuaVz/xOgz+AytWbXgLC6IxUdX637ZgZ/zugcTgNxGSxErJofkbPFA5N00+A4AQg7qo/GK1PoisevPselVOB/LEIS4CCTb1HO/YtMC1RT5DhS4ub9DgUZBrYnTCZTckj7DZlHtbsJQkKFGGtb4MagRGE0bbQ1ItTWCgRe9FIhBxSj4dHO4B1dCzCFUcbZd+pLdoRVwc8X82fiLxkt90UWqFWVqJKHr/mvrJrSM1lu97gByhfvOxAJwMwQMDvcgOougolxw3VDnh1wcPye2QLtMp+4p9J2I/ouD6eruXdJC5Aaa5BvITF/E5IcP98dmHk+/VisV+LdEl7ZgIobHOdiIj9/Ysiwr1TdZSVFA1rfrQ+ak0A2MotTutS7ngLrQfd/TKAppTA/zn6/crzufy1D8fmnE1kLAggWCiYxu0ePA7fYVNChOQP5vitmgmz2lu0iUhX8wycAgCjAgsxBDiXkPurXsQc12KTf4WyYxIWLohBR0fiMFToSPHq2j3f8f6xiPNiu32Frif+IJRsySZ16lDcstnx+d52AVoHBTbMJdCecX13rqUP2biJwFL1/hyB5mXtvEaGWUMI=]]}] lost connection: Disconnected
-[22:20:30] [User Authenticator #0/INFO]: UUID of player Kaenguru3D is 2b1d5648-cbce-4624-8a38-0d3ace9e580f
-[22:20:30] [Server thread/INFO]: Kaenguru3D joined the game
-[22:20:30] [Server thread/INFO]: Kaenguru3D[/192.168.178.24:52183] logged in with entity id 382 at ([world]368.96655849454754, 76.44781362385403, 216.2022853409022)
-[22:20:33] [Server thread/WARN]: Can't keep up! Is the server overloaded? Running 2586ms or 51 ticks behind
-[22:20:39] [Server thread/INFO]: Stopping the server
-[22:20:39] [Server thread/INFO]: Stopping server
-[22:20:39] [Server thread/INFO]: Saving players
-[22:20:39] [Server thread/INFO]: Kaenguru3D lost connection: Server closed
-[22:20:39] [Server thread/INFO]: Kaenguru3D left the game
-[22:20:39] [Server thread/INFO]: Saving worlds
-[22:20:39] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
-[22:20:39] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world'
-[22:20:39] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world'
-[22:20:39] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world'
-[22:20:42] [Server thread/INFO]: [ChunkHolderManager] Saved 1025 block chunks, 1025 entity chunks, 0 poi chunks in world 'world' in 3,62s
-[22:20:43] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
-[22:20:43] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_nether]'/minecraft:the_nether
-[22:20:43] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_nether'
-[22:20:43] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_nether'
-[22:20:43] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_nether'
-[22:20:43] [Server thread/INFO]: [ChunkHolderManager] Saved 529 block chunks, 529 entity chunks, 0 poi chunks in world 'world_nether' in 0,98s
-[22:20:44] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[22:20:44] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_the_end]'/minecraft:the_end
-[22:20:44] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_the_end'
-[22:20:44] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_the_end'
-[22:20:44] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_the_end'
-[22:20:44] [Server thread/INFO]: [ChunkHolderManager] Saved 529 block chunks, 529 entity chunks, 0 poi chunks in world 'world_the_end' in 0,57s
-[22:20:44] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[22:20:44] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
-[22:20:44] [Server thread/INFO]: Flushing Chunk IO
-[22:20:44] [Server thread/INFO]: Closing Thread Pool
-[22:20:44] [Server thread/INFO]: Closing Server
+[19:31:03] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 2 worker threads, and gen parallelism of 2 threads
+[19:31:04] [Server thread/INFO]: Default game type: SURVIVAL
+[19:31:04] [Server thread/INFO]: Generating keypair
+[19:31:05] [Server thread/INFO]: Starting Minecraft server on *:25567
+[19:31:05] [Server thread/INFO]: Using default channel type
+[19:31:05] [Server thread/INFO]: Paper: Using Java compression from Velocity.
+[19:31:05] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
+[19:31:05] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[19:31:05] [Server thread/INFO]: Preparing level "world"
+[19:31:06] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[19:31:07] [Server thread/INFO]: Time elapsed: 767 ms
+[19:31:07] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
+[19:31:07] [Server thread/INFO]: Time elapsed: 144 ms
+[19:31:07] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
+[19:31:10] [Server thread/INFO]: Time elapsed: 2218 ms
+[19:31:10] [Server thread/INFO]: Running delayed init tasks
+[19:31:10] [Server thread/INFO]: Done (9.207s)! For help, type "help"
+[19:31:10] [Server thread/INFO]: Timings Reset
+[19:31:28] [User Authenticator #0/INFO]: UUID of player Kaenguru3D is 2b1d5648-cbce-4624-8a38-0d3ace9e580f
+[19:31:30] [Server thread/INFO]: Kaenguru3D joined the game
+[19:31:30] [Server thread/INFO]: Kaenguru3D[/192.168.178.24:58861] logged in with entity id 358 at ([world]329.3995636829843, 75.9931355636394, 205.4358254514155)
+[19:31:33] [Server thread/WARN]: Can't keep up! Is the server overloaded? Running 3230ms or 64 ticks behind
+[19:31:41] [Server thread/INFO]: [Not Secure] [Server] test
+[19:31:54] [Server thread/WARN]: Can't keep up! Is the server overloaded? Running 6082ms or 121 ticks behind
+[20:03:12] [Server thread/INFO]: Kaenguru3D lost connection: Disconnected
+[20:03:12] [Server thread/INFO]: Kaenguru3D left the game
+[20:36:32] [User Authenticator #1/INFO]: UUID of player Kaenguru3D is 2b1d5648-cbce-4624-8a38-0d3ace9e580f
+[20:36:32] [Server thread/INFO]: Kaenguru3D joined the game
+[20:36:32] [Server thread/INFO]: Kaenguru3D[/192.168.178.24:60273] logged in with entity id 4137 at ([world]329.3995636829843, 75.9931355636394, 205.4358254514155)
+[20:36:35] [Server thread/INFO]: Kaenguru3D lost connection: Disconnected
+[20:36:35] [Server thread/INFO]: Kaenguru3D left the game

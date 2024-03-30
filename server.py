@@ -70,23 +70,41 @@ def server():
             return render_template('server.html', username=session['username'], server_id=server_id_value)
     return render_template('login.html')
 
+from flask import render_template
+
 @app.route('/start-server', methods=['GET'])
 def start_server():
     server_id = request.args.get('id')
-    ram_amount = 2048  # Beispiel für RAM-Menge
+    ram_amount = 2048  # Example RAM amount
     Thread(target=start_minecraft_server, args=(server_id, ram_amount)).start()
-    return render_template('login.html')
-
+    return render_template('server.html')
 @app.route('/stopp-server', methods=['GET'])
 def stopp_server():
-    write_to_server_console(minecraft_process, "stop \n")
-    return render_template('login.html')
+    server_id = request.args.get('id')
+    existing_process = get_minecraft_process(server_id)
+    if existing_process:
+        write_to_server_console(existing_process, "stop \n")
+    
+    return redirect("/")
+
+from flask_socketio import SocketIO, emit
+
+from flask import Flask, Response
+
+from flask_socketio import emit
+from flask import request
+from flask_socketio import emit
+
+import threading
+
+import threading
+import subprocess
+import os
 
 def start_minecraft_server(server_id, ram_amount):
+    print("starting server")
     server_directory = r"C:\Users\Quirin\Documents\GitHub\Free-MC\MC_Servers\\" + server_id 
     os.chdir(server_directory)
-    
-    log_file = open("server.log", "w")
     
     ram_argument = f"-Xmx{ram_amount}M -Xms{ram_amount}M"
 
@@ -101,23 +119,57 @@ def start_minecraft_server(server_id, ram_amount):
     minecraft_processes.append(minecraft_process)
     
     server = user_db_session.query(MinecraftServer).filter_by(server_id=server_id).first()
-    server.process_id = minecraft_process.pid  # Assuming pid gives the process ID
-    user_db_session.commit()
+    if server:
+        # Update the process_id attribute of the MinecraftServer object
+        server.process_id = str(minecraft_process.pid)  # Assuming pid gives the process ID as an integer
+        user_db_session.commit()
 
-    # Print output from stdout and stderr
-    for line in minecraft_process.stdout:
-        print(line.decode().strip())
-    for line in minecraft_process.stderr:
-        print(line.decode().strip())
+        # Function to read and emit log output in real-time
+        def emit_log_messages():
+            while True:
+                # Read and emit stdout
+                stdout_line = minecraft_process.stdout.readline().decode().strip()
+                if not stdout_line:
+                    break  # Exit loop if there is no more output
+                socketio.emit('log_message', stdout_line)  # Emit log message to clients
 
-    log_file.close()
+            # Read and emit stderr
+            while True:
+                stderr_line = minecraft_process.stderr.readline().decode().strip()
+                if not stderr_line:
+                    break  # Exit loop if there is no more output
+                socketio.emit('log_message', stderr_line)  # Emit log message to clients
+        
+        # Start a separate thread to emit log messages
+        log_thread = threading.Thread(target=emit_log_messages)
+        log_thread.start()
+    else:
+        print("No server found!")
+
+        
+    
+
+        
+    
+
 
 
 def get_minecraft_process(server_id):
     for process in minecraft_processes:
-        if process.poll() is None:  # Check if the process is still running
-            return process
+        for server in user_db_session.query(MinecraftServer).filter_by(server_id=server_id).all():
+            print(server.process_id)
+            if process.poll() is None and process.pid == int(server.process_id):
+                return process
     return None
+
+from flask import Flask, request, send_file
+import time
+@app.route('/get-latest-log')
+def get_latest_log():
+    # Get the server ID from the request parameters
+    server_id = request.args.get('server_id')
+
+    return render_template("server.html")
 
 @app.route('/test')
 def test():
@@ -125,9 +177,25 @@ def test():
     existing_process = get_minecraft_process(server_id)
     if existing_process:
         write_to_server_console(existing_process, "stop \n")
-    
+    else :
+        print("no right existing process found")
     return redirect("/")
 
+@app.route('/sendcommand', methods=['GET'])
+def sendcommand():
+    print("received")#
+    for process in minecraft_processes:
+       print(process)
+    server_id = request.args.get('id')
+    message=request.args.get('message')
+    existing_process = get_minecraft_process(server_id)
+    if existing_process:
+        if message is not None:
+             write_to_server_console(existing_process, message + "\n")
+    else:
+        print("no existing process")
+    return redirect("/")
+    
 # Function to write to the stdin of a subprocess
 def write_to_server_console(process, message):
     print("Trying to write")

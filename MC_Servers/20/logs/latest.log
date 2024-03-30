@@ -1,43 +1,29 @@
-[11:31:48] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
-[11:31:51] [ServerMain/INFO]: Loaded 1174 recipes
-[11:31:51] [ServerMain/INFO]: Loaded 1271 advancements
-[11:31:52] [Server thread/INFO]: Starting minecraft server version 1.20.4
-[11:31:52] [Server thread/INFO]: Loading properties
-[11:31:52] [Server thread/INFO]: This server is running Paper version git-Paper-398 (MC: 1.20.4) (Implementing API version 1.20.4-R0.1-SNAPSHOT) (Git: b700460)
-[11:31:52] [Server thread/INFO]: Using 4 threads for Netty based IO
-[11:31:52] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[11:31:53] [Server thread/WARN]: [!] The timings profiler has been enabled but has been scheduled for removal from Paper in the future.
+[20:38:08] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[20:38:11] [ServerMain/INFO]: Loaded 1174 recipes
+[20:38:11] [ServerMain/INFO]: Loaded 1271 advancements
+[20:38:12] [Server thread/INFO]: Starting minecraft server version 1.20.4
+[20:38:12] [Server thread/INFO]: Loading properties
+[20:38:12] [Server thread/INFO]: This server is running Paper version git-Paper-398 (MC: 1.20.4) (Implementing API version 1.20.4-R0.1-SNAPSHOT) (Git: b700460)
+[20:38:12] [Server thread/INFO]: Using 4 threads for Netty based IO
+[20:38:12] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[20:38:13] [Server thread/WARN]: [!] The timings profiler has been enabled but has been scheduled for removal from Paper in the future.
     We recommend installing the spark profiler as a replacement: https://spark.lucko.me/
     For more information please visit: https://github.com/PaperMC/Paper/issues/8948
-[11:31:53] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 2 worker threads, and gen parallelism of 2 threads
-[11:31:53] [Server thread/INFO]: Default game type: SURVIVAL
-[11:31:53] [Server thread/INFO]: Generating keypair
-[11:31:53] [Server thread/INFO]: Starting Minecraft server on *:25565
-[11:31:53] [Server thread/INFO]: Using default channel type
-[11:31:53] [Server thread/INFO]: Paper: Using Java compression from Velocity.
-[11:31:53] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
-[11:31:53] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[11:31:53] [Server thread/INFO]: Preparing level "world"
-[11:31:54] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
-[11:31:54] [Server thread/INFO]: Time elapsed: 344 ms
-[11:31:54] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
-[11:31:57] [Server thread/INFO]: Time elapsed: 2128 ms
-[11:31:57] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
-[11:31:57] [Server thread/INFO]: Time elapsed: 35 ms
-[11:31:57] [Server thread/INFO]: Running delayed init tasks
-[11:31:57] [Server thread/INFO]: Done (5.176s)! For help, type "help"
-[11:31:57] [Server thread/INFO]: Timings Reset
-[11:32:00] [User Authenticator #0/INFO]: UUID of player Kaenguru3D is 2b1d5648-cbce-4624-8a38-0d3ace9e580f
-[11:32:00] [Server thread/INFO]: Kaenguru3D joined the game
-[11:32:00] [Server thread/INFO]: Kaenguru3D[/[0:0:0:0:0:0:0:1]:63743] logged in with entity id 254 at ([world]302.6423676898178, 68.58749572734006, 237.20720510742927)
-[11:32:32] [Server thread/INFO]: Kaenguru3D issued server command: /gamemode creative
-[11:32:32] [Server thread/INFO]: [Kaenguru3D: Set own game mode to Creative Mode]
-[11:36:52] [Server thread/INFO]: Kaenguru3D lost connection: Disconnected
-[11:36:53] [Server thread/INFO]: Kaenguru3D left the game
-[11:36:53] [User Authenticator #1/INFO]: UUID of player Kaenguru3D is 2b1d5648-cbce-4624-8a38-0d3ace9e580f
-[11:36:54] [Server thread/INFO]: Kaenguru3D (/[0:0:0:0:0:0:0:1]:63884) lost connection: Disconnected
-[11:37:19] [User Authenticator #1/INFO]: UUID of player Kaenguru3D is 2b1d5648-cbce-4624-8a38-0d3ace9e580f
-[11:37:19] [Server thread/INFO]: Kaenguru3D joined the game
-[11:37:19] [Server thread/INFO]: Kaenguru3D[/[0:0:0:0:0:0:0:1]:63894] logged in with entity id 1215 at ([world]319.41399388234146, 77.87018168227225, 271.6169813256649)
-[11:39:55] [Server thread/INFO]: Kaenguru3D lost connection: Disconnected
-[11:39:55] [Server thread/INFO]: Kaenguru3D left the game
+[20:38:13] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 2 worker threads, and gen parallelism of 2 threads
+[20:38:13] [Server thread/INFO]: Default game type: SURVIVAL
+[20:38:13] [Server thread/INFO]: Generating keypair
+[20:38:14] [Server thread/INFO]: Starting Minecraft server on *:25565
+[20:38:14] [Server thread/INFO]: Using default channel type
+[20:38:14] [Server thread/INFO]: Paper: Using Java compression from Velocity.
+[20:38:14] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
+[20:38:14] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[20:38:14] [Server thread/INFO]: Preparing level "world"
+[20:38:15] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[20:38:15] [Server thread/INFO]: Time elapsed: 327 ms
+[20:38:15] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
+[20:38:15] [Server thread/INFO]: Time elapsed: 92 ms
+[20:38:15] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
+[20:38:15] [Server thread/INFO]: Time elapsed: 195 ms
+[20:38:16] [Server thread/INFO]: Running delayed init tasks
+[20:38:16] [Server thread/INFO]: Done (4.114s)! For help, type "help"
+[20:38:16] [Server thread/INFO]: Timings Reset

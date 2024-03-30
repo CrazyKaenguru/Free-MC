@@ -1,0 +1,66 @@
+Starting org.bukkit.craftbukkit.Main
+System Info: Java 17 (Java HotSpot(TM) 64-Bit Server VM 17.0.10+11-LTS-240) Host: Windows 11 10.0 (amd64)
+Loading libraries, please wait...
+2024-03-30 21:57:49,418 ServerMain WARN Advanced terminal features are not available in this environment
+[21:57:58 INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[21:58:04 INFO]: Loaded 1174 recipes
+[21:58:04 INFO]: Loaded 1271 advancements
+[21:58:05 INFO]: Starting minecraft server version 1.20.4
+[21:58:05 INFO]: Loading properties
+[21:58:05 INFO]: This server is running Paper version git-Paper-398 (MC: 1.20.4) (Implementing API version 1.20.4-R0.1-SNAPSHOT) (Git: b700460)
+[21:58:06 INFO]: Using 4 threads for Netty based IO
+[21:58:06 INFO]: Server Ping Player Sample Count: 12
+[21:58:06 WARN]: [!] The timings profiler has been enabled but has been scheduled for removal from Paper in the future.
+We recommend installing the spark profiler as a replacement: https://spark.lucko.me/
+For more information please visit: https://github.com/PaperMC/Paper/issues/8948
+[21:58:06 INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 2 worker threads, and gen parallelism of 2 threads
+[21:58:07 INFO]: Default game type: SURVIVAL
+[21:58:07 INFO]: Generating keypair
+[21:58:07 INFO]: Starting Minecraft server on *:25565
+[21:58:07 INFO]: Using default channel type
+[21:58:07 INFO]: Paper: Using Java compression from Velocity.
+[21:58:07 INFO]: Paper: Using Java cipher from Velocity.
+[21:58:07 INFO]: Server permissions file permissions.yml is empty, ignoring it
+[21:58:07 INFO]: Preparing level "world"
+[21:58:08 INFO]: Preparing start region for dimension minecraft:overworld
+[21:58:09 INFO]: Time elapsed: 1076 ms
+[21:58:09 INFO]: Preparing start region for dimension minecraft:the_nether
+[21:58:09 INFO]: Time elapsed: 131 ms
+[21:58:09 INFO]: Preparing start region for dimension minecraft:the_end
+[21:58:09 INFO]: Time elapsed: 55 ms
+[21:58:09 INFO]: Running delayed init tasks
+[21:58:09 INFO]: Done (4.375s)! For help, type "help"
+[21:58:09 INFO]: Timings Reset
+Starting org.bukkit.craftbukkit.Main
+System Info: Java 17 (Java HotSpot(TM) 64-Bit Server VM 17.0.10+11-LTS-240) Host: Windows 11 10.0 (amd64)
+Loading libraries, please wait...
+2024-03-30 21:59:47,327 ServerMain WARN Advanced terminal features are not available in this environment
+[21:59:55 INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[21:59:59 INFO]: Loaded 1174 recipes
+[22:00:00 INFO]: Loaded 1271 advancements
+[22:00:00 INFO]: Starting minecraft server version 1.20.4
+[22:00:00 INFO]: Loading properties
+[22:00:00 INFO]: This server is running Paper version git-Paper-398 (MC: 1.20.4) (Implementing API version 1.20.4-R0.1-SNAPSHOT) (Git: b700460)
+[22:00:01 INFO]: Server Ping Player Sample Count: 12
+[22:00:01 INFO]: Using 4 threads for Netty based IO
+[22:00:02 WARN]: [!] The timings profiler has been enabled but has been scheduled for removal from Paper in the future.
+We recommend installing the spark profiler as a replacement: https://spark.lucko.me/
+For more information please visit: https://github.com/PaperMC/Paper/issues/8948
+[22:00:02 INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 2 worker threads, and gen parallelism of 2 threads
+[22:00:03 INFO]: Default game type: SURVIVAL
+[22:00:03 INFO]: Generating keypair
+[22:00:03 INFO]: Starting Minecraft server on *:25565
+[22:00:03 INFO]: Using default channel type
+[22:00:03 INFO]: Paper: Using Java compression from Velocity.
+[22:00:03 INFO]: Paper: Using Java cipher from Velocity.
+[22:00:03 INFO]: Server permissions file permissions.yml is empty, ignoring it
+[22:00:03 INFO]: Preparing level "world"
+[22:00:04 INFO]: Preparing start region for dimension minecraft:overworld
+[22:00:04 INFO]: Time elapsed: 312 ms
+[22:00:04 INFO]: Preparing start region for dimension minecraft:the_nether
+[22:00:04 INFO]: Time elapsed: 110 ms
+[22:00:04 INFO]: Preparing start region for dimension minecraft:the_end
+[22:00:04 INFO]: Time elapsed: 95 ms
+[22:00:04 INFO]: Running delayed init tasks
+[22:00:04 INFO]: Done (4.191s)! For help, type "help"
+[22:00:04 INFO]: Timings Reset
