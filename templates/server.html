@@ -4,21 +4,119 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minecraft Server Logs</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.js" integrity="sha512-MgkNs0gNdrnOM7k+0L+wgiRc5aLgl74sJQKbIWegVIMvVGPc1+gc1L2oK9Wf/D9pq58eqIJAxOonYPVE5UwUFA==" crossorigin="anonymous"></script>
+    <style>
+        /* Styles for sidebar menu */
+        .sidebar {
+            height: 100%;
+            width: 200px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            padding-top: 20px;
+        }
+
+        .sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 20px;
+            color: #818181;
+            display: block;
+        }
+
+        .sidebar a:hover {
+            color: #f1f1f1;
+        }
+
+        /* Styles for log container */
+        #log-container {
+            margin-left: 220px; /* Adjust based on sidebar width */
+            padding: 20px;
+            overflow-y: scroll; /* Enable vertical scrolling */
+            height: calc(100vh - 120px); /* Adjust height based on other elements */
+            background-color: #f1f1f1;
+        }
+
+        #log-container p {
+            font-family: monospace; /* Use monospace font for console style */
+            margin: 0;
+            padding: 5px 0;
+        }
+
+        /* Styles for buttons */
+        #button-container {
+            margin-left: 220px; /* Adjust based on sidebar width */
+            padding: 20px;
+        }
+
+        #button-container button {
+            margin-right: 10px;
+        }
+    </style>
 </head>
 <body>
+    <!-- Sidebar menu -->
+    <div class="sidebar">
+        <a href="#">Menu Item 1</a>
+        <a href="#">Menu Item 2</a>
+        <a href="#">Menu Item 3</a>
+        <!-- Add more menu items as needed -->
+    </div>
+
+    <!-- Log container -->
     <div id="log-container">
         <!-- Log messages will be appended here -->
     </div>
 
+    <!-- Button container -->
+    <div id="button-container">
+        <button id="start-server">Start Server</button>
+        <button id="stop-server">Stop Server</button>
+    </div>
+
+    <!-- Socket.io script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.js" integrity="sha512-MgkNs0gNdrnOM7k+0L+wgiRc5aLgl74sJQKbIWegVIMvVGPc1+gc1L2oK9Wf/D9pq58eqIJAxOonYPVE5UwUFA==" crossorigin="anonymous"></script>
     <script>
         var socket = io();  // Connect to the Flask-SocketIO server
 
         // Function to handle incoming log messages
-        socket.on('log_message', function(message) {
+        var server_id = "{{ server_id }}";
+        socket.on('log_message_'+server_id, function(message) {
             // Append the log message to the log container
             var logContainer = document.getElementById('log-container');
-            logContainer.innerHTML += '<p>' + message + '</p>';
+            var messageElement = document.createElement('p');
+            messageElement.textContent = message;
+            logContainer.appendChild(messageElement);
+
+            // Scroll to the latest message
+            logContainer.scrollTop = logContainer.scrollHeight;
+        });
+
+        // Event listener for Start Server button
+        document.getElementById('start-server').addEventListener('click', function() {
+            // Send AJAX request to start the server
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    console.log('Server started successfully');
+                }
+            };
+            xhttp.open("GET", "/start-server?id=" + server_id, true);
+            xhttp.send();
+        });
+
+        // Event listener for Stop Server button
+        document.getElementById('stop-server').addEventListener('click', function() {
+            // Send AJAX request to stop the server
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    console.log('Server stopped successfully');
+                }
+            };
+            xhttp.open("GET", "/stopp-server?id=" + server_id, true);
+            xhttp.send();
         });
     </script>
 </body>

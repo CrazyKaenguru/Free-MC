@@ -17,6 +17,7 @@ import json
 app.secret_key = "your_secret_key"
 
 Base = declarative_base()
+BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 minecraft_process = None
 minecraft_processes = []
 class User(Base):
@@ -77,7 +78,7 @@ def start_server():
     server_id = request.args.get('id')
     ram_amount = 2048  # Example RAM amount
     Thread(target=start_minecraft_server, args=(server_id, ram_amount)).start()
-    return render_template('server.html')
+    return render_template('server.html',server_id=server_id)
 @app.route('/stopp-server', methods=['GET'])
 def stopp_server():
     server_id = request.args.get('id')
@@ -103,7 +104,8 @@ import os
 
 def start_minecraft_server(server_id, ram_amount):
     print("starting server")
-    server_directory = r"C:\Users\Quirin\Documents\GitHub\Free-MC\MC_Servers\\" + server_id 
+    #server_directory = r"C:\Users\Quirin\Documents\GitHub\Free-MC\MC_Servers\\" + server_id 
+    server_directory = os.path.join(BASE_DIR, 'MC_Servers', server_id)
     os.chdir(server_directory)
     
     ram_argument = f"-Xmx{ram_amount}M -Xms{ram_amount}M"
@@ -131,14 +133,14 @@ def start_minecraft_server(server_id, ram_amount):
                 stdout_line = minecraft_process.stdout.readline().decode().strip()
                 if not stdout_line:
                     break  # Exit loop if there is no more output
-                socketio.emit('log_message', stdout_line)  # Emit log message to clients
+                socketio.emit('log_message_'+server_id, stdout_line)  # Emit log message to clients
 
             # Read and emit stderr
             while True:
                 stderr_line = minecraft_process.stderr.readline().decode().strip()
                 if not stderr_line:
                     break  # Exit loop if there is no more output
-                socketio.emit('log_message', stderr_line)  # Emit log message to clients
+                socketio.emit('log_message_'+server_id, stderr_line)  # Emit log message to clients
         
         # Start a separate thread to emit log messages
         log_thread = threading.Thread(target=emit_log_messages)
@@ -169,7 +171,7 @@ def get_latest_log():
     # Get the server ID from the request parameters
     server_id = request.args.get('server_id')
 
-    return render_template("server.html")
+    return render_template("server.html",server_id=server_id)
 
 @app.route('/test')
 def test():
